@@ -8,10 +8,6 @@ public class PuzzleManager : MonoBehaviour
     
     //1번퍼즐
     #region
-    public bool starPuzzle1Clear;
-    public bool starPuzzle2Clear;
-    public StarPlate[] starPuzzle1;
-    public StarPlate[] starPuzzle2;
     public ParticleSystem[] starPuzzleParticle;
     public ParticleSystem[] starPuzzleClearEffect;
     public ParticleSystem[] starPuzzleClearEffect2;
@@ -20,12 +16,6 @@ public class PuzzleManager : MonoBehaviour
 
     //2번퍼즐
     #region
-    bool potatoPuzzle1Clear;
-    bool potatoPuzzle2Clear;
-    public PotatoPlate[] potatoPuzzle1;
-    public Potato[] potato1;
-    public PotatoPlate[] potatoPuzzle2;
-    public Potato[] potato2;
 
     public ParticleSystem[] potatoPuzzleParticle;
     public ParticleSystem[] potatoPuzzleParticle2;
@@ -37,7 +27,6 @@ public class PuzzleManager : MonoBehaviour
 
     //3번퍼즐
     #region
-    public PlanetLine[] planetPuzzle;
     public ParticleSystem[] planetPuzzleParticle;
     public ParticleSystem[] planetPuzzleLineParticle;
     public ParticleSystem[] planetPuzzleAllClearEffect;
@@ -54,7 +43,6 @@ public class PuzzleManager : MonoBehaviour
         {
             effect.Stop();
         }
-
         cam = Camera.main.transform.gameObject.GetComponent<CameraScript>();
     }
 
@@ -116,25 +104,10 @@ public class PuzzleManager : MonoBehaviour
     //올클리어 이벤트 ( 1번퍼즐의 올클리어면 매개변수 1을 넣어서 출력 )
     public bool PuzzleClearCheck(int puzzleNumber)
     {
-        switch (puzzleNumber)
-        {
-            case 1:
-                if (starPuzzle1Clear && starPuzzle2Clear)
-                {
                     starPuzzleAllClearEffect[0].Play();
                     // GameObject.Find("CineManager").GetComponent<CineMachineScript>().PlayPuzzleCine(1);
-                    return true;
-                }
-                break;
-            case 2:
-                if (potatoPuzzle1Clear && potatoPuzzle2Clear)
-                {
                     potatoPuzzleAllClearEffect[0].Play();
                     // GameObject.Find("CineManager").GetComponent<CineMachineScript>().PlayPuzzleCine(2);
-                    return true;
-                }
-                break;
-        }
 
         // case 3: 클리어 -> Scenemanager.LoadScene(2); (0 : Opening, 1 : GameScene, 2 : Ending)
         return false;
@@ -262,10 +235,5 @@ public class PuzzleManager : MonoBehaviour
         {
             effect.Stop();
         }
-    }
-
-    public void FadeInAndOut()
-    {
-
     }
 }

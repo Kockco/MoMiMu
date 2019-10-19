@@ -19,9 +19,9 @@ public class Momi_Idle : MomiFSMState
         time = 0f;
     }
 
-    protected override void FixedUpdate()
+    protected override void Update()
     {
-        base.FixedUpdate();
+        base.Update();
 
         RollAround();
     }

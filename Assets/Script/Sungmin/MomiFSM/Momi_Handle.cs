@@ -42,7 +42,7 @@ public class Momi_Handle : MomiFSMState
         isParent = false;
     }
 
-    protected override void FixedUpdate()
+    protected override void Update()
     {
         // base.Update();
         handleTime += Time.deltaTime;
@@ -180,7 +180,5 @@ public class Momi_Handle : MomiFSMState
             transform.position = handleLeftRight[0].transform.position;
         else
             transform.position = handleLeftRight[1].transform.position;
-
-        Debug.Log(handleLeftRight[0].transform.name + ", " + handleLeftRight[1].transform.name);
     }
 }

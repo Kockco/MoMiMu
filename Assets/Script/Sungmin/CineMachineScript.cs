@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
+using UnityEngine.UI;
 using Cinemachine;
 
 public class CineMachineScript : MonoBehaviour
@@ -13,7 +14,7 @@ public class CineMachineScript : MonoBehaviour
     public PlayableDirector play;
     public TimelineAsset[] timeline;
 
-    bool switchingCam;
+    bool switchingCam = false;
 
     // Start is called before the first frame update
     void Start()
@@ -46,32 +47,25 @@ public class CineMachineScript : MonoBehaviour
 
     public void PlayPuzzleCine(int puzzleNum)
     {
-        if (puzzleNum == 1)
+        switch(puzzleNum)
         {
-            for (int i = 0; i < starPuzzles.Length; i++)
-                starPuzzles[i].SetActive(true);
+            case 1:
+                break;
         }
-        else if (puzzleNum == 2)
-        {
-            for (int i = 0; i < starPuzzles.Length; i++)
-                potatoPuzzles[i].SetActive(true);
-        }
-
-        Invoke("InitStarPuzzle", 20);
-        // play.Play();
     }
 
     public void ClearPuzzleCine(int puzzleNum)
     {
+        switchingCam = true;
         play.playableAsset = timeline[puzzleNum - 1];
         play.Play();
     }
 
     public void EndTimeLine()
     {
+        switchingCam = false;
         Camera.main.transform.gameObject.SetActive(true);
         GetComponent<GameObject>().SetActive(false);
     }
-
 
 }

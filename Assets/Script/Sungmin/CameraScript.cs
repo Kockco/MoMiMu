@@ -14,8 +14,7 @@ public class CameraScript : MonoBehaviour
     public bool isClear, puzzleClear;
     float rotX, rotY;
 
-    Vector3 momiPos, momiDirect, camPos;
-    Quaternion rotation;
+    Vector3 momiPos, mouseMove;
     RaycastHit rayHit;
 
     void Start()
@@ -24,9 +23,9 @@ public class CameraScript : MonoBehaviour
         momiState = GameObject.Find("Momi").GetComponent<MomiFSMManager>();
         
         Cursor.visible = false;
-        // Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
     }
-    
+
     void LateUpdate()
     {
         if (momiState.CurrentState != MomiState.Handle && puzzleClear == false)
@@ -49,12 +48,14 @@ public class CameraScript : MonoBehaviour
         distance = Mathf.Clamp(distance, minDis, maxDis);
 
         momiPos = momi.transform.position + Vector3.up * momiY;
-        momiDirect = Quaternion.Euler(-rotX, rotY, 0f) * Vector3.forward;
-        camPos = momiPos + momiDirect * -distance;
+        Vector3 momiDirect = Quaternion.Euler(-rotX, rotY, 0f) * Vector3.forward;
+        Vector3 camPos = momiPos + momiDirect * -distance;
 
         RayToWall();
-        transform.position = Vector3.Lerp(transform.position, camPos, Time.deltaTime * viewSpeed);
+        transform.position = Vector3.Lerp(transform.position, camPos, 0.8f);
         transform.LookAt(momiPos);
+        // transform.position = Vector3.Lerp(transform.position, momiPos, Time.deltaTime * viewSpeed);
+        // transform.localEulerAngles = new Vector3(-rotX * (viewSpeed / 2), rotY * (viewSpeed / 2), 0);
     }
 
     void RayToWall()
@@ -70,8 +71,6 @@ public class CameraScript : MonoBehaviour
                 distance = rayHit.distance;
             }
         }
-        else
-            distance = maxDis;
 
         // if (rayHit.transform != null) Debug.Log(rayHit.transform.name + ", " + rayHit.point);
     }
@@ -91,7 +90,28 @@ public class CameraScript : MonoBehaviour
     void ExitPuzzleView()
     {
         puzzleClear = false;
-
-        Debug.Log("ExitPuzzle");
     }
 }
+
+/*
+ void MouseSense()
+    {
+        //cameraParentTransform.position = myTransform.position + Vector3.up * camHeight;  //캐릭터의 머리 높이쯤
+        Vector3 TargetPos = new Vector3(momi.transform.position.x, momi.transform.position.y * momiY, momi.transform.position.z);
+        transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime * viewSpeed);
+
+        mouseMove += new Vector3(-Input.GetAxisRaw("Mouse Y") * viewSpeed, Input.GetAxisRaw("Mouse X") * viewSpeed, 0);   //마우스의 움직임을 가감
+        if (mouseMove.x < -40)  //위로 볼수있는 것 제한 90이면 아예 땅바닥에서 하늘보기
+            mouseMove.x = -40;
+        else if (50 < mouseMove.x) //위에서 아래로 보는것 제한 
+            mouseMove.x = 50;
+
+        transform.localEulerAngles = mouseMove;
+    }
+
+    void Balance()
+    {
+        if (transform.eulerAngles.x != 0 || transform.eulerAngles.z != 0)   //대각선으로 틀어질 경우는 없어야하니 바로잡기
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+    }
+ */

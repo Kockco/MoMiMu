@@ -10,6 +10,8 @@ public class MomiSound : MonoBehaviour
     new AudioSource audio;
     public bool isState;
 
+    int stepCount = 0;
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -17,14 +19,16 @@ public class MomiSound : MonoBehaviour
 
     public void WalkSoundMomi(bool isSnow)
     {
-        int random = Random.Range(0, 3);
-
         if (isSnow)
-            audio.clip = momiSnow[random];
+            audio.clip = momiSnow[stepCount];
         else
-            audio.clip = momiStone[random];
+            audio.clip = momiStone[stepCount];
 
         audio.PlayOneShot(audio.clip);
+        stepCount++;
+
+        if (stepCount >= momiSnow.Length)
+            stepCount = 0;
     }
 
     public void JumpSoundMomi()

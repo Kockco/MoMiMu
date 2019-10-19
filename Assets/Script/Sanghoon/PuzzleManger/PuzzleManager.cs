@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -42,7 +43,10 @@ public class PuzzleManager : MonoBehaviour
     public ParticleSystem[] planetPuzzleAllClearEffect;
     #endregion
 
+    // 시네머신
+    #region
     CameraScript cam;
+    #endregion
 
     void Start()
     {
@@ -118,8 +122,7 @@ public class PuzzleManager : MonoBehaviour
                 if (starPuzzle1Clear && starPuzzle2Clear)
                 {
                     starPuzzleAllClearEffect[0].Play();
-                    GameObject.Find("CineManager").GetComponent<CineMachineScript>().PlayPuzzleCine(1);
-                    Invoke("StarPuzzleallClearEffect_2", 1);
+                    // GameObject.Find("CineManager").GetComponent<CineMachineScript>().PlayPuzzleCine(1);
                     return true;
                 }
                 break;
@@ -127,13 +130,13 @@ public class PuzzleManager : MonoBehaviour
                 if (potatoPuzzle1Clear && potatoPuzzle2Clear)
                 {
                     potatoPuzzleAllClearEffect[0].Play();
-                    GameObject.Find("CineManager").GetComponent<CineMachineScript>().PlayPuzzleCine(2);
-                    Invoke("PotatoPuzzleallClearEffect_2", 1);
+                    // GameObject.Find("CineManager").GetComponent<CineMachineScript>().PlayPuzzleCine(2);
                     return true;
                 }
                 break;
         }
 
+        // case 3: 클리어 -> Scenemanager.LoadScene(2); (0 : Opening, 1 : GameScene, 2 : Ending)
         return false;
     }
 
@@ -144,6 +147,10 @@ public class PuzzleManager : MonoBehaviour
     void PotatoPuzzleallClearEffect_2()
     {
         potatoPuzzleAllClearEffect[1].Play();
+    }
+    void PlanetPuzzleallClearEffect_2()
+    {
+        planetPuzzleAllClearEffect[1].Play();
     }
 
     //스타 퍼즐 클리어 체크 (1탄퍼즐) 매개변수는 1-1 인지 1-2인지 체크
@@ -255,5 +262,10 @@ public class PuzzleManager : MonoBehaviour
         {
             effect.Stop();
         }
+    }
+
+    public void FadeInAndOut()
+    {
+
     }
 }

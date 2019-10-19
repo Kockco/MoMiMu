@@ -21,9 +21,9 @@ public class Momi_Move : MomiFSMState
         anime.SetBool("Momi_Move", false);
     }
 
-    protected override void FixedUpdate()
+    protected override void Update()
     {
-        base.FixedUpdate();
+        base.Update();
 
         if (!Input.anyKey)
             manager.SetState(MomiState.Idle);

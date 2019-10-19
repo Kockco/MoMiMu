@@ -28,7 +28,7 @@ public class MomiFSMState : MonoBehaviour
         anime = transform.GetChild(0).GetComponent<Animator>();
         momiSound = GameObject.Find("MomiSound").GetComponent<MomiSound>();
         aim = GameObject.Find("Aim");
-        cam = Camera.main.gameObject;
+        cam = GameObject.Find("Camera");  // Camera.main.gameObject;
     }
 
     // Start is called before the first frame update
@@ -46,10 +46,9 @@ public class MomiFSMState : MonoBehaviour
     }
 
     // Update is called once per frame
-    protected virtual void FixedUpdate()
+    protected virtual void Update()
     {
-        Debug.Log(rig.velocity);
-        moveTime += Time.fixedDeltaTime;
+        moveTime += Time.deltaTime;
         anime.SetBool("AnimeFix", false);
 
         IsGrounded();
@@ -62,7 +61,7 @@ public class MomiFSMState : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && manager.CurrentState != MomiState.Jump)
             JumpMomi();
 
-        if (desiredMoveDirection != Vector3.zero && moveTime >= 0.4f && manager.CurrentState == MomiState.Move)
+        if (moveTime >= 0.4f && manager.CurrentState == MomiState.Move)
         {
             momiSound.WalkSoundMomi(momiSound.isState);
             moveTime = 0;

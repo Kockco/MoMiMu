@@ -74,7 +74,6 @@ public class PlanetLine : Plate
     {
         if (isRotationZ)
         {
-            Debug.Log(transform.localEulerAngles);
             float ang = transform.localRotation.eulerAngles.z;
 
             for (int i = 0; i < cutAngle; i++)

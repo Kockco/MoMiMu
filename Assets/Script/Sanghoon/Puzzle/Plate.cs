@@ -54,7 +54,7 @@ public class Plate : MonoBehaviour
 
         //시작할때 지점
         Quaternion startingAngleY = Quaternion.Euler(0, stopAngle[myPoint],0);
-        transform.parent.localRotation = startingAngleY;
+        transform.localRotation = startingAngleY;
     }
 
     protected virtual void Update()

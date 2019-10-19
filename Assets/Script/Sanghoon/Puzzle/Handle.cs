@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Handle : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public bool isCatch;
 
     public Plate plate;

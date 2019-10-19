@@ -23,9 +23,9 @@ public class Momi_Jump : MomiFSMState
         
     }
 
-    protected override void FixedUpdate()
+    protected override void Update()
     {
-        base.FixedUpdate();
+        base.Update();
 
         // if (isGround) manager.SetState(MomiState.Idle);
     }

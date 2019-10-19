@@ -15,6 +15,8 @@ public class Momi_Handle : MomiFSMState
 
     bool isParent, isRotate;
 
+    public bool simpleView;
+
     public override void BeginState()
     {
         base.BeginState();
@@ -54,6 +56,9 @@ public class Momi_Handle : MomiFSMState
 
         if (Input.GetKeyDown(KeyCode.E) && handleTime >= 1f)
             manager.SetState(MomiState.Idle);
+
+        if (simpleView)
+            cam.SampleClearView(cam.moveToObject[0].transform.GetChild(0).gameObject, true);
     }
 
     void RotationMomi()

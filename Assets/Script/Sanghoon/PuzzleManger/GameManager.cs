@@ -9,19 +9,19 @@ public class GameManager : MonoBehaviour
     public enum PuzzleLevel { StarPuzzle, PotatoPuzzle, PlanetPuzzle, AllClear};
     public PuzzleLevel puzzleLevel;
 
-    bool starPuzzle1Clear;
+    public bool starPuzzle1Clear;
     bool starPuzzle2Clear;
     public StarPlate[] starPuzzle1;
     public StarPlate[] starPuzzle2;
 
-    bool potatoPuzzle1Clear;
+    public bool potatoPuzzle1Clear;
     bool potatoPuzzle2Clear;
     public PotatoPlate[] potatoPuzzle1;
     public Potato[] potato1;
     public PotatoPlate[] potatoPuzzle2;
     public Potato[] potato2;
 
-    bool planetPuzzleClear;
+    public bool planetPuzzleClear;
     public PlanetLine[] planetPuzzle;
 
     public int clearPoint1 = 0;
@@ -100,14 +100,12 @@ public class GameManager : MonoBehaviour
 
             case PuzzleLevel.PotatoPuzzle:
                 //퍼즐 2-1 클리어 체크
-                if (potatoPuzzle1Clear) {
+                if (!potatoPuzzle1Clear) {
                     for (int i = 0; i < potatoPuzzle1.Length; i++)
                     {
                         if (potatoPuzzle1[i].myPoint == 0)
                         {
                             clearPoint1++;
-                            potatoPuzzle1[i].myPoint = -1;
-                            effectManager.PuzzleClearCheck(5);
                         }
                     }
                     for (int i = 0; i < potato1.Length; i++)
@@ -122,11 +120,12 @@ public class GameManager : MonoBehaviour
                     if (clearPoint1 == potatoPuzzle1.Length + potato1.Length)
                     {
                         potatoPuzzle1Clear = true;
+                        effectManager.PuzzleClearCheck(6);
+                        clearPoint1 = 0;
                     }
-                    clearPoint1 = 0;
                 }
                 //퍼즐 2-2 클리어 체크
-                if (potatoPuzzle2Clear)
+                if (!potatoPuzzle2Clear)
                 {
                     //퍼즐 모두다 맞았는지 체크
                     for (int i = 0; i < potatoPuzzle2.Length; i++)
@@ -148,12 +147,15 @@ public class GameManager : MonoBehaviour
                     if (clearPoint2 == potatoPuzzle2.Length + potato2.Length)
                     {
                         potatoPuzzle2Clear = true;
+                        effectManager.PuzzleClearCheck(8);
+                        clearPoint2 = 0;
                     }
                 }
                 //두개다 클리어 됬다면
                 if (potatoPuzzle1Clear && potatoPuzzle2Clear)
                 {
-                    puzzleLevel = PuzzleLevel.PlanetPuzzle;
+                    effectManager.PuzzleAllClearEffect(2);
+                    cine.PlayPuzzleCine(2, 3.5f);
                 }
                 break;
 

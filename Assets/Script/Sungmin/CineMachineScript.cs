@@ -78,9 +78,9 @@ public class CineMachineScript : MonoBehaviour
                 case 2:
                     CineCameraSwitching();
                     for (int i = 0; i < potatoPuzzles.Length; i++)
-                        potatoPuzzles[i].SetActive(false);
+                        potatoPuzzles[i].SetActive(true);
 
-                    Invoke("EndTimeLine", 25);
+                    Invoke("EndTimeLine", 21);
                     break;
             }
         }
@@ -88,8 +88,8 @@ public class CineMachineScript : MonoBehaviour
 
     public void EndTimeLine()
     {
-        CineCameraSwitching();
         switchingCam = true;
+        CineCameraSwitching();
         InitAllPuzzle();
         cineTrigger = false;
         cineTimer = 0;
@@ -97,11 +97,13 @@ public class CineMachineScript : MonoBehaviour
         // Camera.main.transform.gameObject.SetActive(true);
         // GetComponent<GameObject>().SetActive(false);
 
-        if (game.puzzleLevel == GameManager.PuzzleLevel.StarPuzzle)
+        if (game.puzzleLevel == GameManager.PuzzleLevel.StarPuzzle && game.starPuzzle1Clear)
             game.puzzleLevel = GameManager.PuzzleLevel.PotatoPuzzle;
-        else if (game.puzzleLevel == GameManager.PuzzleLevel.PotatoPuzzle)
+
+        if (game.puzzleLevel == GameManager.PuzzleLevel.PotatoPuzzle && game.potatoPuzzle1Clear)
             game.puzzleLevel = GameManager.PuzzleLevel.PlanetPuzzle;
-        else if (game.puzzleLevel == GameManager.PuzzleLevel.PlanetPuzzle)
+
+        if (game.puzzleLevel == GameManager.PuzzleLevel.PlanetPuzzle && game.planetPuzzleClear)
             game.puzzleLevel = GameManager.PuzzleLevel.AllClear;
 
     }

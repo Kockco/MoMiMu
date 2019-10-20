@@ -61,7 +61,6 @@ public class EffectManager : MonoBehaviour
         isPuzzleClear = false;
     }
 
-    //스타 퍼즐 클리어 체크 (1탄퍼즐) 매개변수는 1-1 인지 1-2인지 체크
     public void PuzzleClearCheck(int PuzzleNumber)
     {
         switch (PuzzleNumber)
@@ -107,7 +106,7 @@ public class EffectManager : MonoBehaviour
                 foreach (ParticleSystem effect in potatoPuzzleClearEffect2)
                     effect.Play();
 
-                viewNum = 2;
+                viewNum = 3;
                 isPuzzleClear = true;
                 break;
             // ////////////////////////////////// Planet Puzzle

@@ -62,7 +62,7 @@ public class EffectManager : MonoBehaviour
     }
 
     //스타 퍼즐 클리어 체크 (1탄퍼즐) 매개변수는 1-1 인지 1-2인지 체크
-    public void StarPuzzleClearCheck(int PuzzleNumber)
+    public void PuzzleClearCheck(int PuzzleNumber)
     {
         switch (PuzzleNumber)
         {
@@ -91,8 +91,7 @@ public class EffectManager : MonoBehaviour
                 break;
             // ///////////////////////////////// Potato Puzzle
             case 5:
-                foreach (ParticleSystem effect in potatoPuzzleParticle)
-                    effect.Play();
+                // foreach (ParticleSystem effect in potatoPuzzleParticle) effect.Play();
                 break;
             case 6:
                 foreach (ParticleSystem effect in potatoPuzzleClearEffect)
@@ -102,8 +101,7 @@ public class EffectManager : MonoBehaviour
                 isPuzzleClear = true;
                 break;
             case 7:
-                foreach (ParticleSystem effect in potatoPuzzleParticle2)
-                    effect.Play();
+                // foreach (ParticleSystem effect in potatoPuzzleParticle2) effect.Play();
                 break;
             case 8:
                 foreach (ParticleSystem effect in potatoPuzzleClearEffect2)

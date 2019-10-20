@@ -57,14 +57,14 @@ public class GameManager : MonoBehaviour
                         {
                             clearPoint1++;
                             starPuzzle1[i].myPoint = -1;
-                            effectManager.StarPuzzleClearCheck(1);
+                            effectManager.PuzzleClearCheck(1);
                         }
                     }
                     //두개다 맞으면 클리어 이펙트 플레이
                     if (clearPoint1 == starPuzzle1.Length)
                     {
                         starPuzzle1Clear = true;
-                        effectManager.StarPuzzleClearCheck(2);
+                        effectManager.PuzzleClearCheck(2);
                         clearPoint1 = 0;
                     }
                 }
@@ -79,14 +79,14 @@ public class GameManager : MonoBehaviour
                         {
                             clearPoint2++;
                             starPuzzle2[i].myPoint = -1;
-                            effectManager.StarPuzzleClearCheck(3);
+                            effectManager.PuzzleClearCheck(3);
                         }
                     }
                     //퍼즐2 이펙트 플레이
                     if (clearPoint2 == starPuzzle2.Length)
                     {
                         starPuzzle2Clear = true;
-                        effectManager.StarPuzzleClearCheck(4);
+                        effectManager.PuzzleClearCheck(4);
                         clearPoint2 = 0;
                     }
                 }
@@ -105,6 +105,8 @@ public class GameManager : MonoBehaviour
                         if (potatoPuzzle1[i].myPoint == 0)
                         {
                             clearPoint1++;
+                            potatoPuzzle1[i].myPoint = -1;
+                            effectManager.PuzzleClearCheck(5);
                         }
                     }
                     for (int i = 0; i < potato1.Length; i++)

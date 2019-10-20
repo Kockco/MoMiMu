@@ -13,7 +13,7 @@ public class Potato : MonoBehaviour
     {
         potatoPos = GameObject.FindGameObjectsWithTag("Potato_Collider");
         transform.position = potatoPos[myNum].transform.position;
-        transform.localRotation = potatoPos[myNum].transform.localRotation;
+        //transform.localRotation = potatoPos[myNum].transform.localRotation;
     }
 
     public void PositionReset()

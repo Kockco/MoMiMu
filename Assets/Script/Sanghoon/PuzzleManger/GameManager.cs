@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     
     void PuzzleClearCheck()
     {
+        clearPoint1 = 0; clearPoint2 = 0;
         switch (puzzleLevel)
         {
             case PuzzleLevel.StarPuzzle:
@@ -56,7 +57,7 @@ public class GameManager : MonoBehaviour
                         if (starPuzzle1[i].myPoint == 0)
                         {
                             clearPoint1++;
-                            starPuzzle1[i].myPoint = -1;
+                            //starPuzzle1[i].myPoint = -1;
                             effectManager.PuzzleClearCheck(1);
                         }
                     }
@@ -65,7 +66,6 @@ public class GameManager : MonoBehaviour
                     {
                         starPuzzle1Clear = true;
                         effectManager.PuzzleClearCheck(2);
-                        clearPoint1 = 0;
                     }
                 }
                 //퍼즐 1-2클리어 체크
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
                         if (starPuzzle2[i].myPoint == 0)
                         {
                             clearPoint2++;
-                            starPuzzle2[i].myPoint = -1;
+                            //starPuzzle2[i].myPoint = -1;
                             effectManager.PuzzleClearCheck(3);
                         }
                     }

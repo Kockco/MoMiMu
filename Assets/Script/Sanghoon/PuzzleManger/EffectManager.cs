@@ -111,9 +111,9 @@ public class EffectManager : MonoBehaviour
                 break;
             // ////////////////////////////////// Planet Puzzle
             case 9:
-                foreach (ParticleSystem effect in planetPuzzleParticle)
-                    effect.Play();
+                planetPuzzleParticle[PuzzleNumber].Play();
                 break;
+            
         }
     }
 

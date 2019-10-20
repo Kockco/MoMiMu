@@ -164,6 +164,7 @@ public class GameManager : MonoBehaviour
                 if (planetPuzzleClear) { puzzleLevel = PuzzleLevel.AllClear; }
                 else
                 {
+
                     //퍼즐 다 맞았는지 체크
                     for (int i = 0; i < planetPuzzle.Length; i++)
                     {

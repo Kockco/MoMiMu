@@ -9,19 +9,19 @@ public class GameManager : MonoBehaviour
     public enum PuzzleLevel { StarPuzzle, PotatoPuzzle, PlanetPuzzle, AllClear};
     public PuzzleLevel puzzleLevel;
 
-    bool starPuzzle1Clear;
+    public bool starPuzzle1Clear;
     bool starPuzzle2Clear;
     public StarPlate[] starPuzzle1;
     public StarPlate[] starPuzzle2;
 
-    bool potatoPuzzle1Clear;
+    public bool potatoPuzzle1Clear;
     bool potatoPuzzle2Clear;
     public PotatoPlate[] potatoPuzzle1;
     public Potato[] potato1;
     public PotatoPlate[] potatoPuzzle2;
     public Potato[] potato2;
 
-    bool planetPuzzleClear;
+    public bool planetPuzzleClear;
     public PlanetLine[] planetPuzzle;
 
     public int clearPoint1 = 0;
@@ -156,7 +156,6 @@ public class GameManager : MonoBehaviour
                 {
                     effectManager.PuzzleAllClearEffect(2);
                     cine.PlayPuzzleCine(2, 3.5f);
-
                 }
                 break;
 

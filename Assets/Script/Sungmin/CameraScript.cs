@@ -75,34 +75,14 @@ public class CameraScript : MonoBehaviour
         // if (rayHit.transform != null) Debug.Log(rayHit.transform.name + ", " + rayHit.point);
     }
 
-    public void PuzzleClearView(ParticleSystem tempParticle, bool ifClear)
+    public void PuzzleClearView(GameObject viewPos)
     {
-        puzzleClear = ifClear;
+        puzzleClear = true;
 
-        if (puzzleClear)
-            transform.rotation = Quaternion.Lerp((Quaternion)transform.rotation, (Quaternion)tempParticle.transform.rotation, Time.deltaTime * (viewSpeed / 2));
+        transform.position = Vector3.Lerp(transform.position, viewPos.transform.position, Time.deltaTime * viewSpeed);
+        transform.rotation = Quaternion.Lerp((Quaternion)transform.rotation, (Quaternion)viewPos.transform.rotation, Time.deltaTime * viewSpeed);
 
-        // if (tempParticle.isStopped) puzzleClear = false;
-
-        Invoke("ExitPuzzleView", 3);
-    }
-
-    public void SampleClearView(GameObject viewPos, bool ifClear)
-    {
-        puzzleClear = ifClear;
-
-        if (puzzleClear)
-        {
-            transform.position = Vector3.Lerp(transform.position, viewPos.transform.position, Time.deltaTime * (viewSpeed / 2));
-            transform.rotation = Quaternion.Lerp((Quaternion)transform.rotation, (Quaternion)viewPos.transform.rotation, Time.deltaTime * (viewSpeed / 2));
-        }
-
-        Invoke("ExitPuzzleView", 3);
-    }
-
-    void ExitPuzzleView()
-    {
-        puzzleClear = false;
+        Debug.Log(viewPos.transform.name);
     }
 }
 

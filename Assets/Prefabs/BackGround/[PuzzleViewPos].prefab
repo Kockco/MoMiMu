@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2078831537843895252
+--- !u!1 &6550658970678443114
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,282 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2078831537843895253}
-  m_Layer: 0
-  m_Name: StarPuzzleClearView_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2078831537843895253
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078831537843895252}
-  m_LocalRotation: {x: 0.000000036787238, y: -0.15634742, z: -0.000000006519257, w: 0.98770213}
-  m_LocalPosition: {x: 1.76, y: 2.18, z: 3.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2078831538495505165}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -17.990002, z: 0}
---- !u!1 &2078831537898240135
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2078831537898240128}
-  m_Layer: 0
-  m_Name: PotatoPuzzleView
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2078831537898240128
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078831537898240135}
-  m_LocalRotation: {x: -0.024524914, y: 0.8694199, z: -0.23868126, w: 0.43190163}
-  m_LocalPosition: {x: -26.82, y: -65.87, z: -96.26}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2078831539014662126}
-  m_Father: {fileID: 2078831539912793956}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 23.194, y: 123.924, z: -15.706}
---- !u!1 &2078831538495505164
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2078831538495505165}
-  m_Layer: 0
-  m_Name: StarPuzzleView_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2078831538495505165
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078831538495505164}
-  m_LocalRotation: {x: 0.012366008, y: 0.93905926, z: -0.2836734, w: 0.19376343}
-  m_LocalPosition: {x: -155.2101, y: -80.77, z: -140.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2078831537843895253}
-  m_Father: {fileID: 2078831539912793956}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 32.518, y: 154.96, z: -5.902}
---- !u!1 &2078831538580169410
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2078831538580169411}
-  m_Layer: 0
-  m_Name: PotatoPuzzleClearView_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2078831538580169411
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078831538580169410}
-  m_LocalRotation: {x: -0.005779647, y: -0.11060052, z: 0.023814257, w: 0.9935628}
-  m_LocalPosition: {x: 1.01, y: 0.77, z: 4.67}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2078831538808668030}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -0.356, y: -12.712001, z: 2.786}
---- !u!1 &2078831538808668029
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2078831538808668030}
-  m_Layer: 0
-  m_Name: PotatoPuzzleView_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2078831538808668030
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078831538808668029}
-  m_LocalRotation: {x: -0.08648898, y: 0.36669993, z: -0.11699967, w: 0.91889167}
-  m_LocalPosition: {x: -26.3, y: -60.55, z: -81.81}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2078831538580169411}
-  m_Father: {fileID: 2078831539912793956}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -4.1940002, y: 44.108, z: -16.212}
---- !u!1 &2078831538826045377
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2078831538826045378}
-  m_Layer: 0
-  m_Name: PlanetPuzzleView
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2078831538826045378
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078831538826045377}
-  m_LocalRotation: {x: 0.3674642, y: 0.05352046, z: -0.06725022, w: 0.9260578}
-  m_LocalPosition: {x: -6.770002, y: 9.890003, z: -8.880005}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2078831539885874972}
-  m_Father: {fileID: 2078831539912793956}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 43.455, y: 3.926, z: -6.742}
---- !u!1 &2078831538899882926
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2078831538899882927}
-  m_Layer: 0
-  m_Name: StarPuzzleClearView
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2078831538899882927
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078831538899882926}
-  m_LocalRotation: {x: -0.23337391, y: -0.024054093, z: -0.0057748766, w: 0.97207236}
-  m_LocalPosition: {x: 0.57, y: 3.27, z: 4.85}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2078831539724320141}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -27, y: -2.835, z: 0}
---- !u!1 &2078831539014662125
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2078831539014662126}
-  m_Layer: 0
-  m_Name: PotatoPuzzleClearView
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2078831539014662126
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078831539014662125}
-  m_LocalRotation: {x: 0.000000026077027, y: -0.00000005960463, z: -0.032764688, w: 0.99946314}
-  m_LocalPosition: {x: -0.57, y: 0.26, z: 3.88}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2078831537898240128}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.755}
---- !u!1 &2078831539724320140
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2078831539724320141}
-  m_Layer: 0
-  m_Name: StarPuzzleView
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2078831539724320141
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078831539724320140}
-  m_LocalRotation: {x: -0.01381045, y: 0.31514686, z: -0.113176204, w: 0.9421693}
-  m_LocalPosition: {x: -175.63, y: -82.04, z: -135.88}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2078831538899882927}
-  m_Father: {fileID: 2078831539912793956}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 2.597, y: 36.697, z: -12.838}
---- !u!1 &2078831539885874963
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2078831539885874972}
+  - component: {fileID: 6550658970678443109}
   m_Layer: 0
   m_Name: PlanetPuzzleClearView
   m_TagString: Untagged
@@ -291,21 +16,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2078831539885874972
+--- !u!4 &6550658970678443109
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078831539885874963}
-  m_LocalRotation: {x: 0.11695269, y: -0.013301857, z: 0.045074806, w: 0.9920249}
-  m_LocalPosition: {x: 0.22848547, y: 6.030269, z: -0.6721258}
+  m_GameObject: {fileID: 6550658970678443114}
+  m_LocalRotation: {x: 0.18330444, y: -0.01024332, z: 0.04585943, w: 0.9819325}
+  m_LocalPosition: {x: -0.02, y: 8.78, z: -0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2078831538826045378}
+  m_Father: {fileID: 6550658971774993595}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 13.488001, y: -0.934, z: 5.0930004}
---- !u!1 &2078831539912793947
+  m_LocalEulerAnglesHint: {x: 21.157, y: -0.203, z: 5.31}
+--- !u!1 &6550658970789641250
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,7 +38,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2078831539912793956}
+  - component: {fileID: 6550658970789641245}
   m_Layer: 0
   m_Name: '[PuzzleViewPos]'
   m_TagString: Untagged
@@ -321,22 +46,297 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2078831539912793956
+--- !u!4 &6550658970789641245
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078831539912793947}
+  m_GameObject: {fileID: 6550658970789641250}
   m_LocalRotation: {x: -0.04353399, y: 0.9550584, z: -0.17912781, w: -0.23212397}
   m_LocalPosition: {x: 69.06265, y: 82.10125, z: 32.28707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2078831539724320141}
-  - {fileID: 2078831538495505165}
-  - {fileID: 2078831537898240128}
-  - {fileID: 2078831538808668030}
-  - {fileID: 2078831538826045378}
+  - {fileID: 6550658970877452020}
+  - {fileID: 6550658972240732276}
+  - {fileID: 6550658972801080313}
+  - {fileID: 6550658971757485063}
+  - {fileID: 6550658971774993595}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6550658970877452021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6550658970877452020}
+  m_Layer: 0
+  m_Name: StarPuzzleView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6550658970877452020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550658970877452021}
+  m_LocalRotation: {x: -0.01381045, y: 0.31514686, z: -0.113176204, w: 0.9421693}
+  m_LocalPosition: {x: -175.63, y: -82.04, z: -135.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6550658971664167126}
+  m_Father: {fileID: 6550658970789641245}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 2.597, y: 36.697, z: -12.838}
+--- !u!1 &6550658971664167127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6550658971664167126}
+  m_Layer: 0
+  m_Name: StarPuzzleClearView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6550658971664167126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550658971664167127}
+  m_LocalRotation: {x: -0.08589489, y: -0.024646113, z: -0.0021254832, w: 0.9959971}
+  m_LocalPosition: {x: 0.6, y: 1.52, z: 4.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6550658970877452020}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -9.858, y: -2.835, z: 0}
+--- !u!1 &6550658971686786196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6550658971686786199}
+  m_Layer: 0
+  m_Name: PotatoPuzzleClearView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6550658971686786199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550658971686786196}
+  m_LocalRotation: {x: 0.00023593815, y: 0.0114650475, z: -0.020527653, w: 0.99972355}
+  m_LocalPosition: {x: -0.34, y: 0.25, z: 3.89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6550658972801080313}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.054, y: 1.313, z: -2.352}
+--- !u!1 &6550658971757485060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6550658971757485063}
+  m_Layer: 0
+  m_Name: PotatoPuzzleView_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6550658971757485063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550658971757485060}
+  m_LocalRotation: {x: -0.08648898, y: 0.36669993, z: -0.11699967, w: 0.91889167}
+  m_LocalPosition: {x: -26.3, y: -60.55, z: -81.81}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6550658972124578234}
+  m_Father: {fileID: 6550658970789641245}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -4.1940002, y: 44.108, z: -16.212}
+--- !u!1 &6550658971774993592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6550658971774993595}
+  m_Layer: 0
+  m_Name: PlanetPuzzleView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6550658971774993595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550658971774993592}
+  m_LocalRotation: {x: 0.3674642, y: 0.05352046, z: -0.06725022, w: 0.9260578}
+  m_LocalPosition: {x: -6.770002, y: 9.890003, z: -8.880005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6550658970678443109}
+  m_Father: {fileID: 6550658970789641245}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 43.455, y: 3.926, z: -6.742}
+--- !u!1 &6550658972124578235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6550658972124578234}
+  m_Layer: 0
+  m_Name: PotatoPuzzleClearView_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6550658972124578234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550658972124578235}
+  m_LocalRotation: {x: -0.0066541205, y: -0.110548146, z: 0.031688653, w: 0.9933432}
+  m_LocalPosition: {x: 1.110096, y: 0.769955, z: 4.219567}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6550658971757485063}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.356, y: -12.712001, z: 3.694}
+--- !u!1 &6550658972240732277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6550658972240732276}
+  m_Layer: 0
+  m_Name: StarPuzzleView_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6550658972240732276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550658972240732277}
+  m_LocalRotation: {x: 0.012366008, y: 0.93905926, z: -0.2836734, w: 0.19376343}
+  m_LocalPosition: {x: -155.2101, y: -80.77, z: -140.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6550658972755777708}
+  m_Father: {fileID: 6550658970789641245}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 32.518, y: 154.96, z: -5.902}
+--- !u!1 &6550658972755777709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6550658972755777708}
+  m_Layer: 0
+  m_Name: StarPuzzleClearView_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6550658972755777708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550658972755777709}
+  m_LocalRotation: {x: 0.000000036787238, y: -0.15634742, z: -0.000000006519257, w: 0.98770213}
+  m_LocalPosition: {x: 2.1, y: 2.18, z: 2.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6550658972240732276}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -17.990002, z: 0}
+--- !u!1 &6550658972801080318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6550658972801080313}
+  m_Layer: 0
+  m_Name: PotatoPuzzleView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6550658972801080313
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550658972801080318}
+  m_LocalRotation: {x: -0.024524914, y: 0.8694199, z: -0.23868126, w: 0.43190163}
+  m_LocalPosition: {x: -26.82, y: -65.87, z: -96.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6550658971686786199}
+  m_Father: {fileID: 6550658970789641245}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 23.194, y: 123.924, z: -15.706}

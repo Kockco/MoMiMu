@@ -8,22 +8,35 @@ using Cinemachine;
 
 public class CineMachineScript : MonoBehaviour
 {
+    public GameManager game;
     public GameObject[] starPuzzles;
     public GameObject[] potatoPuzzles;
     public GameObject[] planetPuzzles;
-    public PlayableDirector play;
-    public TimelineAsset[] timeline;
+    public GameObject fade;
+    GameObject cam;
 
+    public float cineTimer;
     bool switchingCam = false;
+    bool cineTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
-        InitStarPuzzle();
+        InitAllPuzzle();
+
+        cam = Camera.main.transform.gameObject;
     }
 
-    public void InitStarPuzzle()
+    void Update()
     {
+        if (cineTrigger)
+            cineTimer += Time.deltaTime;
+    }
+
+    public void InitAllPuzzle()
+    {
+        fade.SetActive(false);
+
         for (int i = 0; i < starPuzzles.Length; i++)
             starPuzzles[i].SetActive(false);
 
@@ -35,37 +48,62 @@ public class CineMachineScript : MonoBehaviour
     {
         if (!switchingCam)
         {
-            GetComponent<GameObject>().SetActive(true);
-            Camera.main.transform.gameObject.SetActive(false);
+            fade.SetActive(true);
+            cam.GetComponent<Camera>().enabled = false;
         }
         else
         {
-            Camera.main.transform.gameObject.SetActive(true);
-            GetComponent<GameObject>().SetActive(false);
+            fade.SetActive(false);
+            cam.GetComponent<Camera>().enabled = true;
         }
     }
 
-    public void PlayPuzzleCine(int puzzleNum)
+    public void PlayPuzzleCine(int puzzleNum, float timer)
     {
-        switch(puzzleNum)
+        cineTrigger = true;
+
+        if (cineTimer >= timer)
         {
-            case 1:
-                break;
-        }
-    }
+            fade.SetActive(true);
 
-    public void ClearPuzzleCine(int puzzleNum)
-    {
-        switchingCam = true;
-        play.playableAsset = timeline[puzzleNum - 1];
-        play.Play();
+            switch (puzzleNum)
+            {
+                case 1:
+                    CineCameraSwitching();
+                    for (int i = 0; i < starPuzzles.Length; i++)
+                        starPuzzles[i].SetActive(true);
+
+                    Invoke("EndTimeLine", 23);
+                    break;
+                case 2:
+                    CineCameraSwitching();
+                    for (int i = 0; i < potatoPuzzles.Length; i++)
+                        potatoPuzzles[i].SetActive(false);
+
+                    Invoke("EndTimeLine", 25);
+                    break;
+            }
+        }
     }
 
     public void EndTimeLine()
     {
-        switchingCam = false;
-        Camera.main.transform.gameObject.SetActive(true);
-        GetComponent<GameObject>().SetActive(false);
+        CineCameraSwitching();
+        switchingCam = true;
+        InitAllPuzzle();
+        cineTrigger = false;
+        cineTimer = 0;
+
+        // Camera.main.transform.gameObject.SetActive(true);
+        // GetComponent<GameObject>().SetActive(false);
+
+        if (game.puzzleLevel == GameManager.PuzzleLevel.StarPuzzle)
+            game.puzzleLevel = GameManager.PuzzleLevel.PotatoPuzzle;
+        else if (game.puzzleLevel == GameManager.PuzzleLevel.PotatoPuzzle)
+            game.puzzleLevel = GameManager.PuzzleLevel.PlanetPuzzle;
+        else if (game.puzzleLevel == GameManager.PuzzleLevel.PlanetPuzzle)
+            game.puzzleLevel = GameManager.PuzzleLevel.AllClear;
+
     }
 
 }

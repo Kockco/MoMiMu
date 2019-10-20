@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
                     cine.PlayPuzzleCine(1, 3.5f);
                 }
                 break;
+
             case PuzzleLevel.PotatoPuzzle:
                 //퍼즐 2-1 클리어 체크
                 if (potatoPuzzle1Clear) {
@@ -150,8 +151,12 @@ public class GameManager : MonoBehaviour
                     }
                 }
                 //두개다 클리어 됬다면
-                if (potatoPuzzle1Clear && potatoPuzzle2Clear) { puzzleLevel = PuzzleLevel.PlanetPuzzle; }
+                if (potatoPuzzle1Clear && potatoPuzzle2Clear)
+                {
+                    puzzleLevel = PuzzleLevel.PlanetPuzzle;
+                }
                 break;
+
             case PuzzleLevel.PlanetPuzzle:
                 
                 if (planetPuzzleClear) { puzzleLevel = PuzzleLevel.AllClear; }

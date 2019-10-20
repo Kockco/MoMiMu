@@ -78,7 +78,7 @@ public class CineMachineScript : MonoBehaviour
                 case 2:
                     CineCameraSwitching();
                     for (int i = 0; i < potatoPuzzles.Length; i++)
-                        potatoPuzzles[i].SetActive(false);
+                        potatoPuzzles[i].SetActive(true);
 
                     Invoke("EndTimeLine", 25);
                     break;

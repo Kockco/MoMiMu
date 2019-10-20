@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Level/1019(YJY Work).unity
     guid: a4b0315afddf329439a4120021a366e3
+  - enabled: 1
+    path: Assets/Level/1019MaimScene.unity
+    guid: fce532bdbcdfde4469e39aed9754a5ce
   m_configObjects: {}

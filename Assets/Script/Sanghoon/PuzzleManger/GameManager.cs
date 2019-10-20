@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public EffectManager effectManager;
     public CineMachineScript cine;
-    public enum PuzzleLevel { StarPuzzle, PotatoPuzzle, PlanetPuzzle, AllClear};
+    public enum PuzzleLevel { StarPuzzle, PotatoPuzzle, PlanetPuzzle, AllClear };
     public PuzzleLevel puzzleLevel;
 
     public bool starPuzzle1Clear;
@@ -37,12 +38,12 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 40;
         puzzleLevel = PuzzleLevel.StarPuzzle;
     }
-    
+
     void Update()
     {
         PuzzleClearCheck();
     }
-    
+
     void PuzzleClearCheck()
     {
         clearPoint1 = 0; clearPoint2 = 0;
@@ -100,7 +101,8 @@ public class GameManager : MonoBehaviour
 
             case PuzzleLevel.PotatoPuzzle:
                 //퍼즐 2-1 클리어 체크
-                if (!potatoPuzzle1Clear) {
+                if (!potatoPuzzle1Clear)
+                {
                     for (int i = 0; i < potatoPuzzle1.Length; i++)
                     {
                         if (potatoPuzzle1[i].myPoint == 0)
@@ -160,16 +162,20 @@ public class GameManager : MonoBehaviour
                 break;
 
             case PuzzleLevel.PlanetPuzzle:
-                
-                if (planetPuzzleClear) { puzzleLevel = PuzzleLevel.AllClear; }
-                else
+                if (!planetPuzzleClear)
                 {
-
                     //퍼즐 다 맞았는지 체크
                     for (int i = 0; i < planetPuzzle.Length; i++)
                     {
                         if (planetPuzzle[i].myPoint == 0)
                         {
+                            if (planetPuzzle[0].myPoint == 0)
+                                effectManager.PuzzleClearCheck(9);
+                            if (planetPuzzle[1].myPoint == 0)
+                                effectManager.PuzzleClearCheck(10);
+                            if (planetPuzzle[2].myPoint == 0)
+                                effectManager.PuzzleClearCheck(11);
+
                             clearPoint1++;
                         }
                     }
@@ -177,11 +183,15 @@ public class GameManager : MonoBehaviour
                     if (clearPoint1 == planetPuzzle.Length)
                     {
                         planetPuzzleClear = true;
+                        effectManager.PuzzleClearCheck(12);
+                        effectManager.PuzzleAllClearEffect(3);
+                        clearPoint1 = 0;
                     }
                 }
 
                 break;
             case PuzzleLevel.AllClear:
+                // SceneManager.LoadScene(0); (메인화면)
                 break;
         }
     }

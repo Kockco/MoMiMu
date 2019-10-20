@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EffectManager : MonoBehaviour
 {
-    
+
     //1번퍼즐
     #region
     public ParticleSystem[] starPuzzleParticle1;
@@ -28,7 +28,7 @@ public class EffectManager : MonoBehaviour
 
     //3번퍼즐
     #region
-    public ParticleSystem[] planetPuzzleParticle;
+    public ParticleSystem[] planetPuzzleParticle1, planetPuzzleParticle2, planetPuzzleParticle3;
     public ParticleSystem[] planetPuzzleLineParticle;
     public ParticleSystem[] planetPuzzleAllClearEffect;
     #endregion
@@ -111,15 +111,31 @@ public class EffectManager : MonoBehaviour
                 break;
             // ////////////////////////////////// Planet Puzzle
             case 9:
-                planetPuzzleParticle[PuzzleNumber].Play();
+                foreach (ParticleSystem effect in planetPuzzleParticle1)
+                    effect.Play();
                 break;
-            
+            case 10:
+                foreach (ParticleSystem effect in planetPuzzleParticle2)
+                    effect.Play();
+                break;
+            case 11:
+                foreach (ParticleSystem effect in planetPuzzleParticle3)
+                    effect.Play();
+                break;
+            case 12:
+                foreach (ParticleSystem effect in planetPuzzleLineParticle)
+                    effect.Play();
+
+                viewNum = 3;
+                // isPuzzleClear = true;
+                break;
+
         }
     }
 
     public void PuzzleAllClearEffect(int puzzleNum)
     {
-        switch(puzzleNum)
+        switch (puzzleNum)
         {
             case 1:
                 foreach (ParticleSystem effect in starPuzzleAllClearEffect)

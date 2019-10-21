@@ -11,7 +11,6 @@ public class Potato : MonoBehaviour
 
     void Start()
     {
-        potatoPos = GameObject.FindGameObjectsWithTag("Potato_Collider");
         transform.position = potatoPos[myNum].transform.position;
         //transform.localRotation = potatoPos[myNum].transform.localRotation;
     }

@@ -18,6 +18,7 @@ public class StarPlate : Plate
                 if ((int)transform.localRotation.eulerAngles.y == stopAngle[myPoint])
                 {
                     isLock = true;
+                    if(myPoint == 0)
                     GetComponent<MeshRenderer>().material.SetColor("_TintColor", new Color(1, 0, 0));
                 }
             }

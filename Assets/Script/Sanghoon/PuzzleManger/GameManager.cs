@@ -28,8 +28,19 @@ public class GameManager : MonoBehaviour
     public int clearPoint1 = 0;
     public int clearPoint2 = 0;
 
+    public Material[] core;
+    Color color1;
+    Color color2;
+    Color color3;
     void Start()
     {
+        color1 = new Color(0.27f, 0.27f, 0.27f);
+        color2 = new Color(0.27f, 0.27f, 0.27f);
+        color3 = new Color(0.27f, 0.27f, 0.27f);
+        foreach (Material a in core)
+        {
+            a.SetColor("_EmissionColor", color1);
+        }
         starPuzzle1Clear = false;
         starPuzzle2Clear = false;
         potatoPuzzle1Clear = false;
@@ -42,6 +53,53 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         PuzzleClearCheck();
+
+        if (puzzleLevel == PuzzleLevel.PotatoPuzzle)
+        {
+            
+            if(core[0].GetColor("_EmissionColor").r >= 0 ||
+                core[0].GetColor("_EmissionColor").g >= 0 ||
+                core[0].GetColor("_EmissionColor").b <= 1 )
+            {
+                if(color1.r > 0)
+                    color1.r -= 0.25f * Time.deltaTime;
+                if (color1.g > 0)
+                    color1.g -= 0.25f * Time.deltaTime;
+                if (color1.b < 1)
+                    color1.b += 0.25f * Time.deltaTime;
+                core[0].SetColor("_EmissionColor", color1);
+            }
+        }
+        if (puzzleLevel == PuzzleLevel.PlanetPuzzle)
+        {
+            if (core[1].GetColor("_EmissionColor").r >= 0 ||
+                core[1].GetColor("_EmissionColor").g >= 0 ||
+                core[1].GetColor("_EmissionColor").b <= 1)
+            {
+                if (color2.r > 0)
+                    color2.r -= 0.25f * Time.deltaTime;
+                if (color2.g > 0)
+                    color2.g -= 0.25f * Time.deltaTime;
+                if (color2.b < 1)
+                    color2.b += 0.25f * Time.deltaTime;
+                core[1].SetColor("_EmissionColor", color2);
+            }
+        }
+        if (puzzleLevel == PuzzleLevel.AllClear)
+        {
+            if (core[2].GetColor("_EmissionColor").r >= 0 ||
+                core[2].GetColor("_EmissionColor").g >= 0 ||
+                core[2].GetColor("_EmissionColor").b <= 1)
+            {
+                if (color3.r > 0)
+                    color3.r -= 0.25f * Time.deltaTime;
+                if (color3.g > 0)
+                    color3.g -= 0.25f * Time.deltaTime;
+                if (color3.b < 1)
+                    color3.b += 0.25f * Time.deltaTime;
+                core[2].SetColor("_EmissionColor", color3);
+            }
+        }
     }
 
     void PuzzleClearCheck()

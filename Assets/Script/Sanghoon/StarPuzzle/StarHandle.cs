@@ -15,6 +15,8 @@ public class StarHandle : Handle
         {
             isCatch = true;
             plate.isLock = false;
+
+            plate.gameObject.GetComponent<MeshRenderer>().material.SetColor("_TintColor", new Color(1, 1, 1));
         }
         else
         {

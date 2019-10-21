@@ -9,7 +9,7 @@ public class CameraScript : MonoBehaviour
     public GameObject[] moveToObject;
     public float momiY;
 
-    public float rotationSpeed, scrollSpeed, viewSpeed; 
+    public float rotationSpeed, rotationXMax, scrollSpeed, viewSpeed; 
     public float distance, minDis, maxDis; 
     public bool isClear, puzzleClear;
     float rotX, rotY;
@@ -44,7 +44,7 @@ public class CameraScript : MonoBehaviour
         rotY += Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
         // distance += -Input.GetAxis("Mouse ScrollWheel") * scrollSpeed * Time.deltaTime;
 
-        rotX = Mathf.Clamp(rotX, -70, 20);
+        rotX = Mathf.Clamp(rotX, -rotationXMax, rotationXMax);
         distance = Mathf.Clamp(distance, minDis, maxDis);
 
         momiPos = momi.transform.position + Vector3.up * momiY;
@@ -71,8 +71,8 @@ public class CameraScript : MonoBehaviour
                 distance = rayHit.distance;
             }
         }
-        else
-            distance = maxDis;
+
+        // if (rayHit.transform != null) Debug.Log(rayHit.transform.name + ", " + rayHit.point);
     }
 
     public void PuzzleClearView(GameObject viewPos)

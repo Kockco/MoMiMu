@@ -24,7 +24,6 @@ public class Momi_Handle : MomiFSMState
         cam = GameObject.Find("Camera").GetComponent<CameraScript>();
         aim = transform.GetChild(1).GetComponent<AimControll>();
         momi = this.transform.gameObject;
-        ui.SetActive(true);
 
         isParent = false;
     }
@@ -40,7 +39,6 @@ public class Momi_Handle : MomiFSMState
         anime.SetBool("Momi_Pull", false);
         anime.SetBool("Momi_Push", false);
 
-        ui.SetActive(false);
         isParent = false;
     }
 

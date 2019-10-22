@@ -7,6 +7,8 @@ public class AimControll : MonoBehaviour
     MomiFSMManager momiManager;
     Momi_Handle momiHandle;
 
+    GameObject ui;
+
     // Start is called before the first frame update
     void Start()
     {

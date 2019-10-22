@@ -6,7 +6,6 @@ public class AimControll : MonoBehaviour
 {
     MomiFSMManager momiManager;
     Momi_Handle momiHandle;
-
     GameObject ui;
 
     // Start is called before the first frame update
@@ -14,13 +13,17 @@ public class AimControll : MonoBehaviour
     {
         momiManager = GameObject.Find("Momi").GetComponent<MomiFSMManager>();
         momiHandle = GameObject.Find("Momi").GetComponent<Momi_Handle>();
+        ui = GameObject.Find("Press_E");
+        ui.SetActive(false);
     }
-
-    // Update is called once per frame
-    // void Update() {    }
 
     void OnTriggerStay(Collider col)
     {
+        if ((col.transform.tag == "Star_Handle" || col.transform.tag == "Star_Handle_2"
+            || col.transform.tag == "Potato_Handle" || col.transform.tag == "Potato_Handle_2"
+            || col.transform.tag == "Planet_Handle") && momiManager.CurrentState != MomiState.Handle)
+            ui.SetActive(true);
+
         if (col.transform.tag == "Star_Handle" && Input.GetKeyDown(KeyCode.E) && momiManager.CurrentState != MomiState.Handle)
         {
             momiHandle.col = col.gameObject;
@@ -59,5 +62,10 @@ public class AimControll : MonoBehaviour
             momiManager.SetState(MomiState.Handle);
             momiHandle = GameObject.Find("Momi").GetComponent<Momi_Handle>();
         }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        ui.SetActive(false);
     }
 }

@@ -126,8 +126,8 @@ public class EffectManager : MonoBehaviour
                 foreach (ParticleSystem effect in planetPuzzleLineParticle)
                     effect.Play();
 
-                viewNum = 3;
-                // isPuzzleClear = true;
+                viewNum = 4;
+                isPuzzleClear = true;
                 break;
             default:
                 break;

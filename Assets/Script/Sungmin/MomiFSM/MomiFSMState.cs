@@ -12,6 +12,7 @@ public class MomiFSMState : MonoBehaviour
     protected CapsuleCollider capCol;
     protected Animator anime;
     protected MomiSound momiSound;
+    protected GameObject ui;
 
     [SerializeField] protected float moveSpeed = 4f, jumpPower, moveTime;
     [SerializeField] protected bool isGround = false;
@@ -29,6 +30,7 @@ public class MomiFSMState : MonoBehaviour
         momiSound = GameObject.Find("MomiSound").GetComponent<MomiSound>();
         aim = GameObject.Find("Aim");
         cam = GameObject.Find("Camera");  // Camera.main.gameObject;
+        ui = GameObject.Find("Press_W");
     }
 
     // Start is called before the first frame update
@@ -38,6 +40,7 @@ public class MomiFSMState : MonoBehaviour
 
     public virtual void BeginState()
     {
+        ui.SetActive(false);
     }
 
     public virtual void EndState()

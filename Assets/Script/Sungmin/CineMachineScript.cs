@@ -93,7 +93,6 @@ public class CineMachineScript : MonoBehaviour
         InitAllPuzzle();
         cineTrigger = false;
         cineTimer = 0;
-        game.stepClear = true;
 
         if (game.puzzleLevel == GameManager.PuzzleLevel.StarPuzzle && game.starPuzzle1Clear)
             game.puzzleLevel = GameManager.PuzzleLevel.PotatoPuzzle;

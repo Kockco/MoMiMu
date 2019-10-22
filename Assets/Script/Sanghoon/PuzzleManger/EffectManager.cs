@@ -129,6 +129,8 @@ public class EffectManager : MonoBehaviour
                 viewNum = 3;
                 // isPuzzleClear = true;
                 break;
+            default:
+                break;
 
         }
     }

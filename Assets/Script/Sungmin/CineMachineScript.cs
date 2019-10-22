@@ -94,9 +94,6 @@ public class CineMachineScript : MonoBehaviour
         cineTrigger = false;
         cineTimer = 0;
 
-        // Camera.main.transform.gameObject.SetActive(true);
-        // GetComponent<GameObject>().SetActive(false);
-
         if (game.puzzleLevel == GameManager.PuzzleLevel.StarPuzzle && game.starPuzzle1Clear)
             game.puzzleLevel = GameManager.PuzzleLevel.PotatoPuzzle;
 

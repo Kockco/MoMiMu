@@ -27,20 +27,10 @@ public class GameManager : MonoBehaviour
 
     public int clearPoint1 = 0;
     public int clearPoint2 = 0;
+    public int effectShot;
 
-    public Material[] core;
-    Color color1;
-    Color color2;
-    Color color3;
     void Start()
     {
-        color1 = new Color(0.27f, 0.27f, 0.27f);
-        color2 = new Color(0.27f, 0.27f, 0.27f);
-        color3 = new Color(0.27f, 0.27f, 0.27f);
-        foreach (Material a in core)
-        {
-            a.SetColor("_EmissionColor", color1);
-        }
         starPuzzle1Clear = false;
         starPuzzle2Clear = false;
         potatoPuzzle1Clear = false;
@@ -53,53 +43,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         PuzzleClearCheck();
-
-        if (puzzleLevel == PuzzleLevel.PotatoPuzzle)
-        {
-            
-            if(core[0].GetColor("_EmissionColor").r >= 0 ||
-                core[0].GetColor("_EmissionColor").g >= 0 ||
-                core[0].GetColor("_EmissionColor").b <= 1 )
-            {
-                if(color1.r > 0)
-                    color1.r -= 0.25f * Time.deltaTime;
-                if (color1.g > 0)
-                    color1.g -= 0.25f * Time.deltaTime;
-                if (color1.b < 1)
-                    color1.b += 0.25f * Time.deltaTime;
-                core[0].SetColor("_EmissionColor", color1);
-            }
-        }
-        if (puzzleLevel == PuzzleLevel.PlanetPuzzle)
-        {
-            if (core[1].GetColor("_EmissionColor").r >= 0 ||
-                core[1].GetColor("_EmissionColor").g >= 0 ||
-                core[1].GetColor("_EmissionColor").b <= 1)
-            {
-                if (color2.r > 0)
-                    color2.r -= 0.25f * Time.deltaTime;
-                if (color2.g > 0)
-                    color2.g -= 0.25f * Time.deltaTime;
-                if (color2.b < 1)
-                    color2.b += 0.25f * Time.deltaTime;
-                core[1].SetColor("_EmissionColor", color2);
-            }
-        }
-        if (puzzleLevel == PuzzleLevel.AllClear)
-        {
-            if (core[2].GetColor("_EmissionColor").r >= 0 ||
-                core[2].GetColor("_EmissionColor").g >= 0 ||
-                core[2].GetColor("_EmissionColor").b <= 1)
-            {
-                if (color3.r > 0)
-                    color3.r -= 0.25f * Time.deltaTime;
-                if (color3.g > 0)
-                    color3.g -= 0.25f * Time.deltaTime;
-                if (color3.b < 1)
-                    color3.b += 0.25f * Time.deltaTime;
-                core[2].SetColor("_EmissionColor", color3);
-            }
-        }
     }
 
     void PuzzleClearCheck()
@@ -117,14 +60,22 @@ public class GameManager : MonoBehaviour
                         {
                             clearPoint1++;
                             //starPuzzle1[i].myPoint = -1;
-                            effectManager.PuzzleClearCheck(1);
+                            if (effectShot == 0)
+                            {
+                                effectManager.PuzzleClearCheck(1);
+                                effectShot++;
+                            }
                         }
                     }
                     //두개다 맞으면 클리어 이펙트 플레이
                     if (clearPoint1 == starPuzzle1.Length)
                     {
                         starPuzzle1Clear = true;
-                        effectManager.PuzzleClearCheck(2);
+                        if (effectShot == 1)
+                        {
+                            effectManager.PuzzleClearCheck(2);
+                            effectShot++;
+                        }
                     }
                 }
                 //퍼즐 1-2클리어 체크
@@ -138,14 +89,22 @@ public class GameManager : MonoBehaviour
                         {
                             clearPoint2++;
                             //starPuzzle2[i].myPoint = -1;
-                            effectManager.PuzzleClearCheck(3);
+                            if (effectShot == 2)
+                            {
+                                effectManager.PuzzleClearCheck(3);
+                                effectShot++;
+                            }
                         }
                     }
                     //퍼즐2 이펙트 플레이
                     if (clearPoint2 == starPuzzle2.Length)
                     {
                         starPuzzle2Clear = true;
-                        effectManager.PuzzleClearCheck(4);
+                        if (effectShot == 3)
+                        {
+                            effectManager.PuzzleClearCheck(4);
+                            effectShot++;
+                        }
                         clearPoint2 = 0;
                     }
                 }
@@ -180,7 +139,11 @@ public class GameManager : MonoBehaviour
                     if (clearPoint1 == potatoPuzzle1.Length + potato1.Length)
                     {
                         potatoPuzzle1Clear = true;
-                        effectManager.PuzzleClearCheck(6);
+                        if (effectShot == 4)
+                        {
+                            effectManager.PuzzleClearCheck(6);
+                            effectShot++;
+                        }
                         clearPoint1 = 0;
                     }
                 }
@@ -207,7 +170,11 @@ public class GameManager : MonoBehaviour
                     if (clearPoint2 == potatoPuzzle2.Length + potato2.Length)
                     {
                         potatoPuzzle2Clear = true;
-                        effectManager.PuzzleClearCheck(8);
+                        if (effectShot == 5)
+                        {
+                            effectManager.PuzzleClearCheck(8);
+                            effectShot++;
+                        }
                         clearPoint2 = 0;
                     }
                 }
@@ -236,6 +203,12 @@ public class GameManager : MonoBehaviour
 
                             clearPoint1++;
                         }
+                        if (planetPuzzle[0].myPoint != 0)
+                            effectManager.planetPuzzleParticle1[0].Stop();
+                        if (planetPuzzle[1].myPoint != 0)
+                            effectManager.planetPuzzleParticle2[0].Stop();
+                        if (planetPuzzle[2].myPoint != 0)
+                            effectManager.planetPuzzleParticle3[0].Stop();
                     }
                     //전부다 맞으면 클리어 이펙트 플레이
                     if (clearPoint1 == planetPuzzle.Length)

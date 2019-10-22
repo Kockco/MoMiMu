@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public Potato[] potato2;
 
     public bool planetPuzzleClear;
+    public bool stepClear;
     public PlanetLine[] planetPuzzle;
 
     public int clearPoint1 = 0;
@@ -113,17 +114,20 @@ public class GameManager : MonoBehaviour
                 {
                     for (int i = 0; i < starPuzzle1.Length; i++)
                     {
-                        if (starPuzzle1[i].myPoint == 0)
+                        if (starPuzzle1[i].myPoint == 0 && !stepClear)
                         {
                             clearPoint1++;
-                            //starPuzzle1[i].myPoint = -1;
+                            stepClear = true;
                             effectManager.PuzzleClearCheck(1);
                         }
+                        else
+                            stepClear = false;
                     }
                     //두개다 맞으면 클리어 이펙트 플레이
                     if (clearPoint1 == starPuzzle1.Length)
                     {
                         starPuzzle1Clear = true;
+                        stepClear = false;
                         effectManager.PuzzleClearCheck(2);
                     }
                 }
@@ -134,17 +138,20 @@ public class GameManager : MonoBehaviour
                     for (int i = 0; i < starPuzzle2.Length; i++)
                     {
                         //모든 퍼즐조각이 포인트가 0인가?(0이점답임)
-                        if (starPuzzle2[i].myPoint == 0)
+                        if (starPuzzle2[i].myPoint == 0 && !stepClear)
                         {
                             clearPoint2++;
-                            //starPuzzle2[i].myPoint = -1;
+                            stepClear = true;
                             effectManager.PuzzleClearCheck(3);
                         }
+                        else
+                            stepClear = false;
                     }
                     //퍼즐2 이펙트 플레이
                     if (clearPoint2 == starPuzzle2.Length)
                     {
                         starPuzzle2Clear = true;
+                        stepClear = false;
                         effectManager.PuzzleClearCheck(4);
                         clearPoint2 = 0;
                     }
@@ -163,10 +170,13 @@ public class GameManager : MonoBehaviour
                 {
                     for (int i = 0; i < potatoPuzzle1.Length; i++)
                     {
-                        if (potatoPuzzle1[i].myPoint == 0)
+                        if (potatoPuzzle1[i].myPoint == 0 && !stepClear)
                         {
                             clearPoint1++;
+                            stepClear = true;
                         }
+                        else
+                            stepClear = false;
                     }
                     for (int i = 0; i < potato1.Length; i++)
                     {
@@ -180,6 +190,7 @@ public class GameManager : MonoBehaviour
                     if (clearPoint1 == potatoPuzzle1.Length + potato1.Length)
                     {
                         potatoPuzzle1Clear = true;
+                        stepClear = false;
                         effectManager.PuzzleClearCheck(6);
                         clearPoint1 = 0;
                     }
@@ -190,9 +201,10 @@ public class GameManager : MonoBehaviour
                     //퍼즐 모두다 맞았는지 체크
                     for (int i = 0; i < potatoPuzzle2.Length; i++)
                     {
-                        if (potatoPuzzle2[i].myPoint == 0)
+                        if (potatoPuzzle2[i].myPoint == 0 && !stepClear)
                         {
                             clearPoint2++;
+                            stepClear = true;
                         }
                     }
                     for (int i = 0; i < potato2.Length; i++)
@@ -207,6 +219,7 @@ public class GameManager : MonoBehaviour
                     if (clearPoint2 == potatoPuzzle2.Length + potato2.Length)
                     {
                         potatoPuzzle2Clear = true;
+                        stepClear = false;
                         effectManager.PuzzleClearCheck(8);
                         clearPoint2 = 0;
                     }
@@ -235,21 +248,25 @@ public class GameManager : MonoBehaviour
                                 effectManager.PuzzleClearCheck(11);
 
                             clearPoint1++;
+                            stepClear = true;
                         }
+                        else
+                            stepClear = false;
                     }
                     //전부다 맞으면 클리어 이펙트 플레이
                     if (clearPoint1 == planetPuzzle.Length)
                     {
                         planetPuzzleClear = true;
+                        stepClear = false;
                         effectManager.PuzzleClearCheck(12);
                         effectManager.PuzzleAllClearEffect(3);
                         clearPoint1 = 0;
                     }
                 }
-
                 break;
             case PuzzleLevel.AllClear:
-                // SceneManager.LoadScene(0); (메인화면)
+                if (stepClear)
+                    SceneManager.LoadScene(3);
                 break;
         }
     }

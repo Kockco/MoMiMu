@@ -54,49 +54,48 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         PuzzleClearCheck();
-
         if (puzzleLevel == PuzzleLevel.PotatoPuzzle)
         {
-            
-            if(core[0].GetColor("_EmissionColor").r >= 0 ||
-                core[0].GetColor("_EmissionColor").g >= 0 ||
-                core[0].GetColor("_EmissionColor").b <= 1 )
+            if (core[0].GetColor("_EmissionColor").r <= 2.77f ||
+                core[0].GetColor("_EmissionColor").g <= 3.02f ||
+                core[0].GetColor("_EmissionColor").b <= 3.24f)
             {
-                if(color1.r > 0)
-                    color1.r -= 0.25f * Time.deltaTime;
-                if (color1.g > 0)
-                    color1.g -= 0.25f * Time.deltaTime;
-                if (color1.b < 1)
-                    color1.b += 0.25f * Time.deltaTime;
+                if (color1.r < 2.77f)
+                    color1.r += 1f * Time.deltaTime;
+                if (color1.g < 3.02f)
+                    color1.g += 1f * Time.deltaTime;
+                if (color1.b < 3.24f)
+                    color1.b += 1f * Time.deltaTime;
+
                 core[0].SetColor("_EmissionColor", color1);
             }
         }
         if (puzzleLevel == PuzzleLevel.PlanetPuzzle)
         {
-            if (core[1].GetColor("_EmissionColor").r >= 0 ||
-                core[1].GetColor("_EmissionColor").g >= 0 ||
-                core[1].GetColor("_EmissionColor").b <= 1)
+            if (core[1].GetColor("_EmissionColor").r <= 2.77f ||
+                core[1].GetColor("_EmissionColor").g <= 3.02f ||
+                core[1].GetColor("_EmissionColor").b <= 3.24f)
             {
-                if (color2.r > 0)
-                    color2.r -= 0.25f * Time.deltaTime;
-                if (color2.g > 0)
-                    color2.g -= 0.25f * Time.deltaTime;
-                if (color2.b < 1)
+                if (color2.r < 2.77f)
+                    color2.r += 0.25f * Time.deltaTime;
+                if (color2.g < 3.02f)
+                    color2.g += 0.25f * Time.deltaTime;
+                if (color2.b < 3.24f)
                     color2.b += 0.25f * Time.deltaTime;
                 core[1].SetColor("_EmissionColor", color2);
             }
         }
         if (puzzleLevel == PuzzleLevel.AllClear)
         {
-            if (core[2].GetColor("_EmissionColor").r >= 0 ||
-                core[2].GetColor("_EmissionColor").g >= 0 ||
-                core[2].GetColor("_EmissionColor").b <= 1)
+            if (core[2].GetColor("_EmissionColor").r <= 2.77f ||
+                core[2].GetColor("_EmissionColor").g <= 3.02f ||
+                core[2].GetColor("_EmissionColor").b <= 3.24f)
             {
-                if (color3.r > 0)
-                    color3.r -= 0.25f * Time.deltaTime;
-                if (color3.g > 0)
-                    color3.g -= 0.25f * Time.deltaTime;
-                if (color3.b < 1)
+                if (color3.r < 2.77f)
+                    color3.r += 0.25f * Time.deltaTime;
+                if (color3.g < 3.02f)
+                    color3.g += 0.25f * Time.deltaTime;
+                if (color3.b < 3.24f)
                     color3.b += 0.25f * Time.deltaTime;
                 core[2].SetColor("_EmissionColor", color3);
             }

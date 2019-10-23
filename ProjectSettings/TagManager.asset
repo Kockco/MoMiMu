@@ -13,6 +13,9 @@ TagManager:
   - Planet_Handle
   - Handle
   - Potato_Handle2
+  - Potato_Handle_2
+  - Snow
+  - Stone
   layers:
   - Default
   - TransparentFX

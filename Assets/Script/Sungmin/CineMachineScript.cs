@@ -77,6 +77,8 @@ public class CineMachineScript : MonoBehaviour
                 case 1:
                     CineCameraSwitching();
                     fade[0].SetActive(true);
+                    fade[1].SetActive(false);
+                    fade[2].SetActive(false);
 
                     for (int i = 0; i < starPuzzles.Length; i++)
                         starPuzzles[i].SetActive(true);
@@ -86,6 +88,9 @@ public class CineMachineScript : MonoBehaviour
                 case 2:
                     CineCameraSwitching();
                     fade[0].SetActive(true);
+                    fade[1].SetActive(false);
+                    fade[2].SetActive(false);
+
 
                     for (int i = 0; i < potatoPuzzles.Length; i++)
                         potatoPuzzles[i].SetActive(true);

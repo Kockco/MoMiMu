@@ -93,12 +93,14 @@ public class Momi_Handle : MomiFSMState
         }
         if (Input.GetKey(KeyCode.W))
         {
-            for (int i = 0; i < knob.Length; i++)
+            if (!knob[0].isPlaying && !knob[1].isPlaying) knob[0].Play();
+            if (knob[0].time > 2f && !knob[1].isPlaying)
             {
-                if (knob[i].time > 2.5f)
-                {
-                    knob[i].Play();
-                }
+                knob[1].Play();
+            }
+            if (knob[1].time > 2f && !knob[0].isPlaying)
+            {
+                knob[0].Play();
             }
             anime.SetBool("Momi_Push", true);
             HandleRotate();
@@ -109,12 +111,14 @@ public class Momi_Handle : MomiFSMState
 
         if (Input.GetKey(KeyCode.S))
         {
-            for (int i = 0; i < knob.Length; i++)
+            if (!knob[0].isPlaying && !knob[1].isPlaying) knob[0].Play();
+            if (knob[0].time > 2f && !knob[1].isPlaying)
             {
-                if (knob[i].time > 2.5f)
-                {
-                    knob[i].Play();
-                }
+                knob[1].Play();
+            }
+            if (knob[1].time > 2f && !knob[0].isPlaying)
+            {
+                knob[0].Play();
             }
             anime.SetBool("Momi_Pull", true);
             HandleRotate();

@@ -10600,7 +10600,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   RotationModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 3
@@ -14121,7 +14121,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 51af38749d059264eadd6c0c91b12609, type: 2}
+  - {fileID: 2100000, guid: 17867bd4c1a49c9488b4786dd337a223, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
